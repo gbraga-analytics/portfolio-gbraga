@@ -15,6 +15,24 @@
 
 <body class="is-preload">
 
+	<div id="lang-switcher">
+
+		<div id="btn-lusofono" class="flag-btn state-br selected" onclick="togglePortuguese()" title="Alternar Português">
+			<img src="https://flagcdn.com/w80/br.png" class="flag-primary" alt="Brasil">
+			<img src="https://flagcdn.com/w80/pt.png" class="flag-secondary" alt="Portugal">
+		</div>
+
+		<div id="btn-en" class="flag-btn simple" onclick="setLanguage('en')" title="English">
+			<img src="https://flagcdn.com/w80/gb.png" alt="English">
+		</div>
+
+		<div id="btn-es" class="flag-btn simple" onclick="setLanguage('es')" title="Español">
+			<img src="https://flagcdn.com/w80/es.png" alt="Español">
+		</div>
+
+	</div>
+
+
 	<header id="header">
 		<div class="inner">
 			<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="Foto de Perfil" /></a>
@@ -526,6 +544,61 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<script>
+
+		let currentLusophoneState = 'br';
+
+		function togglePortuguese() {
+			const btn = document.getElementById('btn-lusofono');
+
+			// Lógica visual de seleção
+			highlightButton('btn-lusofono');
+
+			if (currentLusophoneState === 'br') {
+				currentLusophoneState = 'pt';
+				btn.classList.remove('state-br');
+				btn.classList.add('state-pt');
+				changeText('pt-pt');
+			} else {
+				currentLusophoneState = 'br';
+				btn.classList.remove('state-pt');
+				btn.classList.add('state-br');
+				changeText('pt-br');
+			}
+		}
+
+		function setLanguage(lang) {
+			changeText(lang);
+
+			// Descobre qual botão iluminar baseado na lingua
+			if (lang === 'en') highlightButton('btn-en');
+			if (lang === 'es') highlightButton('btn-es');
+		}
+
+		// Gerencia o Holofote
+		function highlightButton(activeId) {
+			// Remove a classe 'selected' de TODOS os botões
+			document.querySelectorAll('.flag-btn').forEach(btn => {
+				btn.classList.remove('selected');
+			});
+
+			// Adiciona a classe 'selected' só no clicado
+			const activeBtn = document.getElementById(activeId);
+			if (activeBtn) {
+				activeBtn.classList.add('selected');
+			}
+		}
+
+		function changeText(langCode) {
+			const allTexts = document.querySelectorAll('.lang-pt-br, .lang-pt-pt, .lang-en, .lang-es');
+			allTexts.forEach(el => el.style.display = 'none');
+
+			const selectedTexts = document.querySelectorAll('.lang-' + langCode);
+			selectedTexts.forEach(el => el.style.display = '');
+		}
+
+	</script>
 
 </body>
 
