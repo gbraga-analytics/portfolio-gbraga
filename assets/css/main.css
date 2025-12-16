@@ -3457,3 +3457,177 @@ body.is-touch .poptrox-popup .closer {
 .simple:hover {
 	filter: brightness(1.1);
 }
+
+/* TEMA TECH DARK */
+
+/* Sobrescrevendo as cores do body e fundos */
+body,
+#main,
+#header {
+	background-color: #1e1e2e !important;
+
+	/* Fundo Cinza Azulado */
+	color: #cdd6f4 !important;
+	/* Texto Gelo */
+}
+
+/* Sidebar com tom diferenciado para profundidade */
+#header {
+	background-color: #181825 !important;
+	border-right: none !important;
+
+	/* Remove a linha que dividia a tela */
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+	/* Sombra suave para separar */
+}
+
+/* Títulos (H1, H2, H3) mais brilhantes */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+	color: #ffffff !important;
+}
+
+/* Botões com gradiente moderno */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+	background-color: #89b4fa !important;
+	/* Azul Tech */
+	color: #1e1e2e !important;
+
+	/* Texto escuro para contraste */
+	border: none !important;
+	font-weight: 700 !important;
+	transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(137, 180, 250, 0.4);
+	/* Brilho azul ao passar o mouse */
+}
+
+/* Links e Ícones */
+a {
+	color: #89b4fa !important;
+	border-bottom-color: rgba(137, 180, 250, 0.3) !important;
+}
+
+.icon>.label {
+	display: none;
+}
+
+
+/* --- HEADER: FOTO LÍQUIDA + FLUTUANDO (Modo JPG) --- */
+
+/* 1. O Movimento da Borda (Líquido) */
+@keyframes liquidMorph {
+	0% {
+		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	}
+
+	50% {
+		border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+	}
+
+	100% {
+		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	}
+}
+
+/* 2. O Movimento da Foto (Levitar) */
+@keyframes photoFloat {
+	0% {
+		transform: translateY(0) scale(1.1);
+	}
+
+	/* Scale 1.1 para não mostrar borda branca */
+	50% {
+		transform: translateY(-10px) scale(1.1);
+	}
+
+	100% {
+		transform: translateY(0) scale(1.1);
+	}
+}
+
+/* O CONTAINER (A Moldura) */
+#header .image.avatar {
+	width: 180px !important;
+	height: 180px !important;
+	max-width: none !important;
+	margin-bottom: 1.5em;
+	background: transparent;
+	/* Sem fundo colorido por enquanto */
+
+	/* APLICA A FORMA LÍQUIDA */
+	animation: liquidMorph 8s ease-in-out infinite;
+
+	/* CORTA O QUE SOBRA (Isso resolve o quadrado) */
+	overflow: hidden;
+
+	/* Centraliza */
+	display: inline-block;
+
+	/* Borda opcional para destacar o formato */
+	border: 3px solid #89b4fa;
+}
+
+/* A FOTO (Lá dentro) */
+#header .image.avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border: none !important;
+	box-shadow: none !important;
+
+	/* APLICA A FLUTUAÇÃO */
+	animation: photoFloat 5s ease-in-out infinite;
+}
+
+/* RODAPÉ DA PÁGINA PRINCIPAL (Centralizado) */
+
+#footer {
+	padding: 2em 1;
+	/* Espaço em cima e embaixo */
+	text-align: center;
+	/* O comando mestre de centralizar */
+	width: 100%;
+	background-color: transparent;
+	/* Garante que não tenha fundo estranho */
+}
+
+#footer .copyright {
+	color: rgba(255, 255, 255, 0.4);
+	/* Cor discreta */
+	font-size: 0.8em;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#footer .copyright li {
+	display: inline-block;
+	/* Fica um ao lado do outro */
+	border-left: solid 1px rgba(255, 255, 255, 0.15);
+	/* Barrinha separadora */
+	line-height: 1;
+	margin-left: 0.50em;
+	/* Espaço entre eles */
+	padding-left: 0.50em;
+	/* Espaço entre eles */
+}
+
+/* Remove a barra do primeiro item pra ficar bonito */
+#footer .copyright li:first-child {
+	border-left: 0;
+	margin-left: 0;
+	padding-left: 0;
+}
