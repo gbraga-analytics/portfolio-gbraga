@@ -3631,3 +3631,51 @@ a {
 	margin-left: 0;
 	padding-left: 0;
 }
+
+/* TAGS DE TECNOLOGIA (BADGES MODERNOS) */
+
+/* 1. Ajuste do Espaçamento entre as tags */
+ul.actions.small li {
+	padding: 0 0.5em 0 0 !important;
+	/* Aproxima uma da outra */
+	margin-bottom: 0.5em !important;
+	/* Espaço se quebrar linha */
+}
+
+/* 2. O Estilo da Tag em si */
+ul.actions.small li .button.small.disabled {
+	/* Forma e Tamanho (O "Capricho") */
+	font-size: 0.65em !important;
+	/* Texto bem menor e delicado */
+	font-weight: 700 !important;
+	/* Negrito para leitura fácil */
+	letter-spacing: 0.15em !important;
+	/* Espaçamento "tech" entre letras */
+	text-transform: uppercase;
+	/* Caixa alta */
+
+	border-radius: 50px !important;
+	/* Formato Pílula (arredondado) */
+	padding: 0.3em 1em !important;
+	/* Mais "magrinho" verticalmente */
+	height: auto !important;
+	/* Remove altura fixa do botão */
+	line-height: 1.2 !important;
+	/* Centraliza o texto verticalmente */
+
+	/* Cores (Tema Tech Dark) */
+	background-color: rgba(137, 180, 250, 0.1) !important;
+	/* Azul do tema bem transparente */
+	color: #89b4fa !important;
+	/* Texto na cor de destaque */
+	border: 1px solid rgba(137, 180, 250, 0.2) !important;
+	/* Borda super sutil */
+
+	/* Limpeza */
+	box-shadow: none !important;
+	/* Remove sombras antigas */
+	opacity: 1 !important;
+	/* Tira o efeito de "desabilitado/apagado" */
+	pointer-events: none;
+	/* Mouse não vira mãozinha (é só info) */
+}
