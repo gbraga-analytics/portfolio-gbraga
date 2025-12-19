@@ -303,76 +303,73 @@
 					dominando una nueva tecnología?</span>
 			</p>
 
-			<div class="row">
-				<div class="col-8 col-12-small">
-					<form method="post" action="#">
-						<div class="row gtr-uniform gtr-50">
-							<div class="col-6 col-12-xsmall">
-								<input type="text" name="name" id="name" placeholder="Nome / Name" />
-							</div>
-							<div class="col-6 col-12-xsmall">
-								<input type="email" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="col-12">
-								<textarea name="message" id="message" placeholder="Mensagem / Message" rows="4"></textarea>
-							</div>
-						</div>
-						<ul class="actions" style="margin-top: 20px;">
-							<li>
-								<input type="submit" value="Enviar Mensagem" />
-							</li>
-						</ul>
-					</form>
+			<form method="post" action="#">
+				<div class="row gtr-uniform gtr-50">
+					<div class="col-6 col-12-xsmall">
+						<input type="text" name="name" id="name" placeholder="Nome" />
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<input type="email" name="email" id="email" placeholder="Email" />
+					</div>
+					<div class="col-12">
+						<textarea name="message" id="message" placeholder="Mensagem" rows="4"></textarea>
+					</div>
 				</div>
-
-				<div class="col-4 col-12-small">
-					<ul class="labeled-icons">
-						<li>
-							<h3 class="icon solid fa-home"><span class="label">Localização</span></h3>
-
-							<span class="lang-pt-br">Valença, RJ | Brasil</span>
-							<span class="lang-pt-pt" style="display:none">Valença, RJ | Brasil</span>
-							<span class="lang-en" style="display:none">Valença, RJ | Brazil</span>
-							<span class="lang-es" style="display:none">Valença, RJ | Brasil</span>
-
-							<br />
-							<em>#RemoteFirst</em> 🌎
-						</li>
-						<li>
-							<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-							<a href="mailto:gbragainc@gmail.com">gbragainc@gmail.com</a>
-						</li>
-						<li>
-							<h3 class="icon brands fa-linkedin"><span class="label">LinkedIn</span></h3>
-							<a href="https://www.linkedin.com/in/oguilherme-braga/" target="_blank"
-								rel="noopener noreferrer">linkedin.com/in/oguilherme-braga</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="inner">
-				<ul class="copyright">
-					<li>&copy; Guilherme H C Braga</li>
+				<ul class="actions" style="margin-top: 20px;">
 					<li>
-						<span class="lang-pt-br">Todos os direitos reservados</span>
-						<span class="lang-pt-pt" style="display:none">Todos os direitos reservados</span>
-						<span class="lang-en" style="display:none">All rights reserved</span>
-						<span class="lang-es" style="display:none">Todos los derechos reservados</span>
+						<input type="submit" id="submit-btn" value="Enviar Mensagem" />
+					</li>
+				</ul>
+			</form>
+
+			<div class="col-4 col-12-small">
+				<ul class="labeled-icons">
+					<li>
+						<h3 class="icon solid fa-home"><span class="label">Localização</span></h3>
+
+						<span class="lang-pt-br">Valença, RJ | Brasil</span>
+						<span class="lang-pt-pt" style="display:none">Valença, RJ | Brasil</span>
+						<span class="lang-en" style="display:none">Valença, RJ | Brazil</span>
+						<span class="lang-es" style="display:none">Valença, RJ | Brasil</span>
+
+						<br />
+						<em>#RemoteFirst</em> 🌎
 					</li>
 					<li>
-						Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
+						<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+						<a href="mailto:gbragainc@gmail.com">gbragainc@gmail.com</a>
+					</li>
+					<li>
+						<h3 class="icon brands fa-linkedin"><span class="label">LinkedIn</span></h3>
+						<a href="https://www.linkedin.com/in/oguilherme-braga/" target="_blank"
+							rel="noopener noreferrer">linkedin.com/in/oguilherme-braga</a>
 					</li>
 				</ul>
 			</div>
-		</footer>
+	</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+				<li>&copy; Guilherme H C Braga</li>
+				<li>
+					<span class="lang-pt-br">Todos os direitos reservados</span>
+					<span class="lang-pt-pt" style="display:none">Todos os direitos reservados</span>
+					<span class="lang-en" style="display:none">All rights reserved</span>
+					<span class="lang-es" style="display:none">Todos los derechos reservados</span>
+				</li>
+				<li>
+					Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
 
 
-		<!-- Four -->
-		<!--
+	<!-- Four -->
+	<!--
 					<section id="four">
 						<h2>Elements</h2>
 
@@ -701,13 +698,30 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/main.js"></script>
 
 	<script>
+		/* LÓGICA DO FORMULÁRIO (Agora aqui dentro para funcionar) */
+		const formTranslations = {
+			'pt-br': { name: 'Nome', email: 'E-mail', message: 'Mensagem', btn: 'Enviar Mensagem' },
+			'pt-pt': { name: 'Nome', email: 'E-mail', message: 'Mensagem', btn: 'Enviar Mensagem' },
+			'en': { name: 'Name', email: 'Email', message: 'Message', btn: 'Send Message' },
+			'es': { name: 'Nombre', email: 'Correo electrónico', message: 'Mensaje', btn: 'Enviar Mensaje' }
+		};
 
+		function updateFormLanguage(lang) {
+			// Verifica se a linguagem existe, se não, usa pt-br
+			const texts = formTranslations[lang] || formTranslations['pt-br'];
+
+			// Atualiza os placeholders e o botão (se os elementos existirem)
+			if (document.getElementById('name')) document.getElementById('name').placeholder = texts.name;
+			if (document.getElementById('email')) document.getElementById('email').placeholder = texts.email;
+			if (document.getElementById('message')) document.getElementById('message').placeholder = texts.message;
+			if (document.getElementById('submit-btn')) document.getElementById('submit-btn').value = texts.btn;
+		}
+
+		/* LÓGICA DAS BANDEIRAS */
 		let currentLusophoneState = 'br';
 
 		function togglePortuguese() {
 			const btn = document.getElementById('btn-lusofono');
-
-			// Lógica visual de seleção
 			highlightButton('btn-lusofono');
 
 			if (currentLusophoneState === 'br') {
@@ -725,34 +739,30 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		function setLanguage(lang) {
 			changeText(lang);
-
-			// Descobre qual botão iluminar baseado na lingua
 			if (lang === 'en') highlightButton('btn-en');
 			if (lang === 'es') highlightButton('btn-es');
 		}
 
-		// Gerencia o Holofote
 		function highlightButton(activeId) {
-			// Remove a classe 'selected' de TODOS os botões
 			document.querySelectorAll('.flag-btn').forEach(btn => {
 				btn.classList.remove('selected');
 			});
-
-			// Adiciona a classe 'selected' só no clicado
 			const activeBtn = document.getElementById(activeId);
-			if (activeBtn) {
-				activeBtn.classList.add('selected');
-			}
+			if (activeBtn) activeBtn.classList.add('selected');
 		}
 
+		/* CENTRAL DE COMANDO */
 		function changeText(langCode) {
+			// Troca os textos normais (Spans)
 			const allTexts = document.querySelectorAll('.lang-pt-br, .lang-pt-pt, .lang-en, .lang-es');
 			allTexts.forEach(el => el.style.display = 'none');
 
 			const selectedTexts = document.querySelectorAll('.lang-' + langCode);
 			selectedTexts.forEach(el => el.style.display = '');
-		}
 
+			// Troca o formulário
+			updateFormLanguage(langCode);
+		}
 	</script>
 
 </body>
